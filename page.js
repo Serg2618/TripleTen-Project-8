@@ -4,13 +4,27 @@ module.exports = {
     toField: '#to',
     phoneNumberField: '#phone',
     codeField: '#code',
+    cardInput: '#number',
+    cvvInput: `//div[@class='card-code-input']//input[@id='code']`,
+    textInput: '#comment',
+    carModalInput: `//div[@class='order-header-content']`,
     // Buttons
     callATaxiButton: 'button=Call a taxi',
     phoneNumberButton: '//div[starts-with(text(), "Phone number")]',
     nextButton: 'button=Next',
     confirmButton: 'button=Confirm',
+    addCardButton: 'div=Add card',
+    paymentMethodButton: '.pp-text',
+    linkButton: 'button=Link',
+    cardButton: `//div[@class="pp-value-text" and text()="Card"]`,
+    supportiveButton: `//div[@class='tcard-icon']//img[@alt='Supportive']`,
+    checkBoxButton: `//div[@class='workflow']//div[1]//div[1]//div[2]//div[1]//span[1]`,
+    twoIceCreams: `//div[normalize-space()='2']`,
+    plusButton: `//div[@class='r-group']//div[1]//div[1]//div[2]//div[1]//div[3]`,
+    carModalButton: `//button[@class='smart-button']`,
     // Modals
     phoneNumberModal: '.modal',
+    changeFocusSpace: '.payment-picker', 
     // Functions
     fillAddresses: async function(from, to) {
         const fromField = await $(this.fromField);
@@ -47,5 +61,21 @@ module.exports = {
         const code = await requests[0].response.body.code
         await codeField.setValue(code)
         await $(this.confirmButton).click()
+    },
+    fillCardNumber: async function(cardNumber, cvvNumber) {
+        const cardNumberField = await $(this.cardInput);
+        await cardNumberField.waitForDisplayed();
+        await cardNumberField.setValue(cardNumber);
+        const codeNumberField = await $(this.cvvInput);
+        await codeNumberField.waitForDisplayed();
+        await codeNumberField.setValue(cvvNumber);
+    },
+    fillOrderRequirements: async function() {
+        const switchButton = await $(this.BlanketsAndHandkerchiefs);
+        await switchButton.waitForDisplayed();
+        await switchButton.click();
+        const counterButton = await $(this.IceCream);
+        await counterButton.waitForDisplayed();
+        await counterButton.click();
     },
 };
