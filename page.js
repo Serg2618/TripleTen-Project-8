@@ -7,7 +7,7 @@ module.exports = {
     cardInput: '#number',
     cvvInput: `//div[@class='card-code-input']//input[@id='code']`,
     textInput: '#comment',
-    carModalInput: `//div[@class='order-header-content']`,
+    checkBoxCheck: '.switch-input',
     // Buttons
     callATaxiButton: 'button=Call a taxi',
     phoneNumberButton: '//div[starts-with(text(), "Phone number")]',
@@ -24,7 +24,7 @@ module.exports = {
     carModalButton: `//button[@class='smart-button']`,
     // Modals
     phoneNumberModal: '.modal',
-    changeFocusSpace: '.payment-picker', 
+    carSearchModal: '//div[text()="Car search"]', 
     // Functions
     fillAddresses: async function(from, to) {
         const fromField = await $(this.fromField);

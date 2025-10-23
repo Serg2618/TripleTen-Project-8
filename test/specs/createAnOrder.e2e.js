@@ -53,8 +53,8 @@ describe('Create an order', () => {
         const supportiveButton = await $(page.supportiveButton);
         await supportiveButton.click();
         const checkBoxButton = await $(page.checkBoxButton);
-        await checkBoxButton.click();
-        await expect(supportiveButton).toBeEnabled(true);
+        const actualValue = checkBoxCheck.getProperty("checked");
+        await expect(actualValue).toBeTruthy();
     })
 
     it('Order 2 IceCream', async () => {
@@ -74,9 +74,10 @@ describe('Create an order', () => {
         await page.fillAddresses('East 2nd Street, 601', '1300 1st St');
         const carModalButton = await $(page.carModalButton);
         await carModalButton.click();
-        const carModalInput = await $(page.carModalInput);
-        await carModalInput.waitForDisplayed();
+        const checkBoxCheck = await $(page.checkBoxCheck);
+        await checkBoxCheck.waitForDisplayed();
         await browser.pause(10000);
-        await expect(carModalInput).toBeExisting();
+        const carSearchModal = await $(page.carSearchModal);
+        await expect(carSearchModal).toBeDisplayed();
     })
 })
