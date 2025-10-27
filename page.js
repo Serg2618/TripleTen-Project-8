@@ -25,6 +25,7 @@ module.exports = {
     // Modals
     phoneNumberModal: '.modal',
     carSearchModal: '//div[text()="Car search"]', 
+    changeFocusSpace: '.payment-picker',
     // Functions
     fillAddresses: async function(from, to) {
         const fromField = await $(this.fromField);

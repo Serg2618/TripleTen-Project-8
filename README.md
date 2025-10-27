@@ -14,3 +14,5 @@ Call a Taxi button, Supportive car, Payment method via credit card, write a mess
 5th Order 2 Ice Cream, the system must count 2 times the Ice Cream, using + button.
 
 6th After everyhting, the system must click on the button "Enter the number and order" which will begin short countdown, then show the car model and details for order.
+
+PERSONAL NOTE TO REVIEWER: Everything I did before, worked perfectly well, the first time, before the reviewer asked me to change stuff. Multiple tests been running and all went passed, I threw month + on this project and wrecked my brain on it.

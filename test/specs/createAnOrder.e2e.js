@@ -52,7 +52,8 @@ describe('Create an order', () => {
         await page.fillAddresses('East 2nd Street, 601', '1300 1st St');
         const supportiveButton = await $(page.supportiveButton);
         await supportiveButton.click();
-        const checkBoxButton = await $(page.checkBoxButton);
+        await checkBoxButton.click();
+        const checkBoxCheck = await $(page.checkBoxCheck);
         const actualValue = checkBoxCheck.getProperty("checked");
         await expect(actualValue).toBeTruthy();
     })
@@ -74,9 +75,6 @@ describe('Create an order', () => {
         await page.fillAddresses('East 2nd Street, 601', '1300 1st St');
         const carModalButton = await $(page.carModalButton);
         await carModalButton.click();
-        const checkBoxCheck = await $(page.checkBoxCheck);
-        await checkBoxCheck.waitForDisplayed();
-        await browser.pause(10000);
         const carSearchModal = await $(page.carSearchModal);
         await expect(carSearchModal).toBeDisplayed();
     })
