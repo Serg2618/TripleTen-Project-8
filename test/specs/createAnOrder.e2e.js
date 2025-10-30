@@ -52,6 +52,7 @@ describe('Create an order', () => {
         await page.fillAddresses('East 2nd Street, 601', '1300 1st St');
         const supportiveButton = await $(page.supportiveButton);
         await supportiveButton.click();
+        const checkBoxButton = await $(page.checkBoxButton);
         await checkBoxButton.click();
         const checkBoxCheck = await $(page.checkBoxCheck);
         const actualValue = checkBoxCheck.getProperty("checked");
