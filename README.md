@@ -1,18 +1,54 @@
-*//Draken Sprint-Project 8//*
+## Draken Sprint-Project 8 — Functional Flow & Requirements
+Urban route test from **“East”** to **“1300 Street”**, including taxi ordering, add-ons, payment, messaging, and vehicle confirmation.
 
-In the Project, I tested the Urban routes map form "East" to "1300" street.
-Call a Taxi button, Supportive car, Payment method via credit card, write a message to the driver, check Blanket and Handkerchiefs, order 2 Ice Cream, and enter a car and search model.
+---
 
-1st task was to fill the address, phone number which is repeatable through all the project, and save the phone numer.
+### Required System Flow
 
-2th fill ot the credirt card details, ensure everything is filling up and showing the details of cretid card, and working.
+1. **User Information Initialization**
+   * The system must allow input of **address** and **phone number**.
+   * The **phone number must be saved** and remain reusable across the entire project flow.
+   * Previously saved phone numbers should auto-populate when applicable.
 
-3th write a message to the driver to "get some whiskey". Ensure the message is written in the system.
+2. **Payment Method Setup**
+   * The system must support **credit card payment**.
+   * All required credit card fields must be fillable.
+   * Entered card details must be **validated**, **stored**, and **visibly confirmed** in the UI.
+   * The payment method must remain active and selectable for the order.
 
-4th Check the button at Order Blanket and Handkerchiefs. The button in the system should move as checked.
+3. **Driver Messaging**
+   * The system must allow the user to **write a message to the driver**.
+   * The message content (e.g., *“get some whiskey”*) must be:
+     * Successfully entered
+     * Stored in the system
+     * Associated with the current ride request
 
-5th Order 2 Ice Cream, the system must count 2 times the Ice Cream, using + button.
+4. **Supportive Items Selection**
+   * The system must provide selectable options for:
+     * **Blanket**
+     * **Handkerchiefs**
+   * When selected, the corresponding toggle/button must:
+     * Change state to **checked**
+     * Persist as selected for the order
 
-6th After everyhting, the system must click on the button "Enter the number and order" which will begin short countdown, then show the car model and details for order.
+5. **Additional Items Ordering**
+   * The system must allow ordering **Ice Cream** using a **“+” increment button**.
+   * Pressing “+” twice must:
+     * Increase the item count to **2**
+     * Correctly reflect the quantity in the order summary
 
-PERSONAL NOTE TO REVIEWER: Everything I did before, worked perfectly well, the first time, before the reviewer asked me to change stuff. Multiple tests been running and all went passed, I threw month + on this project and wrecked my brain on it.
+6. **Order Confirmation & Vehicle Assignment**
+   * After all required fields and selections are completed, the system must enable the button:
+     * **“Enter the number and order”**
+   * Upon activation:
+     * A **short countdown** must begin
+     * After the countdown, the system must display:
+       * **Assigned car model**
+       * **Vehicle details**
+       * **Order confirmation information**
+
+### Expected Outcome
+* All steps must execute without errors.
+* All user inputs and selections must persist correctly through the flow.
+* The final screen must clearly present the vehicle model and order details.
+
